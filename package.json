@@ -1,6 +1,6 @@
 {
   "name": "unicope",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Converts Unicode characters to their perceptually best ASCII representation",
   "main": "./dist/unicope.cjs",
   "module": "./dist/unicope.mjs",
