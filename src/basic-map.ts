@@ -1,4 +1,4 @@
-export default {
+export const basicMap = {
   0x0180: "B",
   0x0181: "B",
   0x0182: "B",
