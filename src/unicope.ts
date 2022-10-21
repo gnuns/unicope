@@ -17,12 +17,12 @@ export function unicope(input: string) {
       if (basicMap.has(codePoint)) {
         return String.fromCodePoint(basicMap.get(codePoint)!);
       }
+      if (decompositionMap.has(codePoint)) {
+        return String.fromCodePoint(decompositionMap.get(codePoint)!);
+      }
       const perceptualIndex = perceptualMap.indexOf(codePoint);
       if (perceptualIndex !== -1) {
         return perceptualMap[perceptualIndex % 52];
-      }
-      if (decompositionMap.has(codePoint)) {
-        return String.fromCodePoint(decompositionMap.get(codePoint)!);
       }
       return "?";
     })

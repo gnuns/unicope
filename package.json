@@ -5,11 +5,13 @@
   "main": "./dist/unicope.cjs",
   "module": "./dist/unicope.mjs",
   "types": "./dist/unicope.d.ts",
+  "source": "./src/unicope.ts",
   "files": [
     "dist"
   ],
   "license": "MIT",
   "sideEffects": false,
+  "isLibrary": true,
   "type": "module",
   "exports": {
     ".": {
@@ -18,9 +20,11 @@
       "require": "./dist/unicope.cjs"
     }
   },
+  "engines": {
+    "node": ">= 14"
+  },
   "scripts": {
-    "build": "unbuild",
-    "watch": "swc --watch ./src -d ./dist"
+    "build": "unbuild"
   },
   "devDependencies": {
     "unbuild": "^0.9.4"
