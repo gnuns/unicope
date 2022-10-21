@@ -1,6 +1,6 @@
 import { basicMap } from "./basic-map";
 import { perceptualMap } from "./perceptual-map";
-
+import { decompositionMap } from "./decomposition-map";
 /**
  * Transliterates a Unicode string into ASCII.
  *
@@ -8,18 +8,21 @@ import { perceptualMap } from "./perceptual-map";
  * @return {string}
  */
 export function unicope(input: string) {
-  return [...input]
+  return [...input.normalize()]
     .map((c) => {
       const codePoint = c.codePointAt(0)!;
       if (codePoint <= 0xff) {
         return c;
       }
-      if (basicMap[codePoint]) {
-        return basicMap[codePoint];
+      if (basicMap.has(codePoint)) {
+        return String.fromCodePoint(basicMap.get(codePoint)!);
       }
       const perceptualIndex = perceptualMap.indexOf(codePoint);
       if (perceptualIndex !== -1) {
         return perceptualMap[perceptualIndex % 52];
+      }
+      if (decompositionMap.has(codePoint)) {
+        return String.fromCodePoint(decompositionMap.get(codePoint)!);
       }
       return "?";
     })

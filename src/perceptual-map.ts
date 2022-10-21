@@ -1,4 +1,4 @@
-export const perceptualMap = [
+export const perceptualMap = Object.freeze([
   'A','B','C','D','E',
   'F','G','H','I','J',
   'K','L','M','N','O',
@@ -10,6 +10,7 @@ export const perceptualMap = [
   'o','p','q','r','s',
   't','u','v','w','x',
   'y','z',
+  
   
   0x1d504, 0x1d505, 0x212d,  0x1d507, 0x1d508,
   0x1d509, 0x1d50a, 0x210c,  0x2111,  0x1d50d,
@@ -453,4 +454,4 @@ export const perceptualMap = [
   0xa741, 0x142, 0x6d,   0x6e,   0xf8,   0x1d7d,
   0xa757, 0x24d, 0x73,   0x167,  0x1d7e, 0x76,
   0x77,   0x78,  0x24f,  0x1b6
-]
+]);
