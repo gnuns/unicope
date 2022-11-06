@@ -1,11 +1,32 @@
 {
   "name": "unicope",
   "version": "0.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gnuns/unicope.git"
+  },
+  "author": {
+    "name": "Gabriel Nunes",
+    "email": "gabriel@multiverso.me",
+    "url": "https://multiverso.me"
+  },
   "description": "Converts Unicode characters to their perceptually best ASCII representation",
   "main": "./dist/unicope.cjs",
   "module": "./dist/unicope.mjs",
   "types": "./dist/unicope.d.ts",
   "source": "./src/unicope.ts",
+  "keywords": [
+    "unicode",
+    "ascii",
+    "transliteration",
+    "utf8",
+    "latinization",
+    "romanization",
+    "slug",
+    "emoji",
+    "unidecode",
+    "normalization"
+  ],
   "files": [
     "dist"
   ],
@@ -24,9 +45,14 @@
     "node": ">= 14"
   },
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "dist": "yarn gen:basic-map && yarn gen:decomposition-map && yarn build ",
+    "gen:basic-map": "node ./scripts/gen-basic-map.js",
+    "gen:decomposition-map": "node ./scripts/gen-decomposition-map.js"
   },
   "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-multiline-arrays": "^1.1.1",
     "unbuild": "^0.9.4"
   }
 }
