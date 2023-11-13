@@ -2056,7 +2056,7 @@ function unicope(input, options = {
   const allowedBlockEnd = allowedBlocksEnd[options.maxAllowedBlock || "latin-1" /* Latin1Supplement */];
   const charParser = (c) => {
     const codePoint = c.codePointAt(0);
-    if (codePoint <= allowedBlockEnd) {
+    if (codePoint >= 32 && codePoint <= allowedBlockEnd) {
       return c;
     }
     if (basicMap.has(codePoint)) {

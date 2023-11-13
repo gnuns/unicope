@@ -39,7 +39,7 @@ export function unicope(
 
   const charParser = (c: string) => {
     const codePoint = c.codePointAt(0)!;
-    if (codePoint <= allowedBlockEnd) {
+    if (codePoint >= 32 && codePoint <= allowedBlockEnd) {
       return c;
     }
     if (basicMap.has(codePoint)) {
