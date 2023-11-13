@@ -52,6 +52,7 @@
   },
   "scripts": {
     "build": "unbuild",
+    "test": "vitest run",
     "dist": "yarn gen:basic-map && yarn gen:decomposition-map && yarn build ",
     "gen:basic-map": "node ./scripts/gen-basic-map.js",
     "gen:decomposition-map": "node ./scripts/gen-decomposition-map.js"
@@ -60,7 +61,8 @@
     "prettier": "^3.1.0",
     "prettier-plugin-multiline-arrays": "^3.0.0",
     "typescript": "^5.2.2",
-    "unbuild": "^2.0.0"
+    "unbuild": "^2.0.0",
+    "vitest": "^0.34.6"
   },
   "packageManager": "yarn@4.0.1"
 }
