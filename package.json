@@ -36,9 +36,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/unicope.d.ts",
-      "import": "./dist/unicope.mjs",
-      "require": "./dist/unicope.cjs"
+      "require": {
+        "types": "./dist/unicope.d.cts",
+        "default": "./dist/unicope.cjs"
+      },
+      "import": {
+        "types": "./dist/unicope.d.mts",
+        "default": "./dist/unicope.mjs"
+      },
+      "default": "./dist/unicope.mjs"
     }
   },
   "engines": {
@@ -51,8 +57,10 @@
     "gen:decomposition-map": "node ./scripts/gen-decomposition-map.js"
   },
   "devDependencies": {
-    "prettier": "^2.7.1",
-    "prettier-plugin-multiline-arrays": "^1.1.1",
-    "unbuild": "^0.9.4"
-  }
+    "prettier": "^3.1.0",
+    "prettier-plugin-multiline-arrays": "^3.0.0",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0"
+  },
+  "packageManager": "yarn@4.0.1"
 }
